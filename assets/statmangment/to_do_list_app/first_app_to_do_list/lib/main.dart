@@ -29,9 +29,8 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: Consumer<AuthProvider>(
-        builder: (context, auth, _) => auth.isAuthenticated
-            ? const TaskListScreen()
-            : const LoginScreen(),
+        builder: (context, auth, _) =>
+            auth.isAuthenticated ? const TaskListScreen() : const LoginScreen(),
       ),
     );
   }
@@ -42,7 +41,6 @@ class AuthProvider with ChangeNotifier {
   bool get isAuthenticated => _isAuthenticated;
 
   void login(String email, String password) {
-   
     _isAuthenticated = true;
     notifyListeners();
   }
@@ -73,7 +71,8 @@ class TaskProvider with ChangeNotifier {
 
   Future<void> saveTasks() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
-    String tasksString = json.encode(_tasks.map((task) => task.toJson()).toList());
+    String tasksString =
+        json.encode(_tasks.map((task) => task.toJson()).toList());
     await prefs.setString('tasks', tasksString);
   }
 
@@ -98,6 +97,7 @@ class TaskProvider with ChangeNotifier {
     notifyListeners();
   }
 }
+
 class Task {
   final String id;
   final String title;
@@ -110,7 +110,8 @@ class Task {
     required this.title,
     required this.notes,
     required this.dueDate,
-    this.isComplete = false, required String priority,
+    this.isComplete = false,
+    required String priority,
   });
 
   factory Task.fromJson(Map<String, dynamic> json) => Task(
@@ -118,8 +119,11 @@ class Task {
         title: json['title'],
         notes: json['notes'],
         dueDate: DateTime.parse(json['dueDate']),
-        isComplete: json['isComplete'], priority: '',
+        isComplete: json['isComplete'],
+        priority: '',
       );
+
+  String? get priority => null;
 
   Map<String, dynamic> toJson() => {
         'id': id,
@@ -129,13 +133,3 @@ class Task {
         'isComplete': isComplete,
       };
 }
-
-
-
-
-
-
-
-
-
-

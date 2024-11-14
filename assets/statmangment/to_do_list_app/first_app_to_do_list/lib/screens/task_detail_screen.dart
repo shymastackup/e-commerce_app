@@ -63,8 +63,11 @@
 //                     ),
 //                     const SizedBox(height: 8),
 //                     Text(
-//                       task.notes.isNotEmpty ? task.notes : 'No additional notes',
-//                       style: const TextStyle(fontSize: 16, color: Colors.black87),
+//                       task.notes.isNotEmpty
+//                           ? task.notes
+//                           : 'No additional notes',
+//                       style:
+//                           const TextStyle(fontSize: 16, color: Colors.black87),
 //                     ),
 //                   ],
 //                 ),
@@ -79,7 +82,8 @@
 //                   Navigator.pop(context);
 //                 },
 //                 style: ElevatedButton.styleFrom(
-//                   padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 12.0),
+//                   padding: const EdgeInsets.symmetric(
+//                       horizontal: 24.0, vertical: 12.0),
 //                   backgroundColor: Colors.redAccent,
 //                   shape: RoundedRectangleBorder(
 //                     borderRadius: BorderRadius.circular(8.0),

@@ -61,8 +61,8 @@ class TaskListScreen extends StatelessWidget {
                           color: task.isComplete ? Colors.green : Colors.blue,
                         ),
                         onPressed: () {
-                          taskProvider.updateTask(
-                              task..isComplete = !task.isComplete);
+                          taskProvider
+                              .updateTask(task..isComplete = !task.isComplete);
                         },
                       ),
                       onTap: () {

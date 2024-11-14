@@ -31,31 +31,27 @@ class _NewTaskScreenState extends State<NewTaskScreen> {
               style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 16),
-
-
             TextField(
               controller: titleController,
               decoration: InputDecoration(
                 labelText: 'Title',
-                border: OutlineInputBorder(borderRadius: BorderRadius.circular(8.0)),
+                border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(8.0)),
                 prefixIcon: const Icon(Icons.title),
               ),
             ),
             const SizedBox(height: 16),
-
-            
             TextField(
               controller: notesController,
               decoration: InputDecoration(
                 labelText: 'Notes',
-                border: OutlineInputBorder(borderRadius: BorderRadius.circular(8.0)),
+                border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(8.0)),
                 prefixIcon: const Icon(Icons.note),
               ),
               maxLines: 3,
             ),
             const SizedBox(height: 16),
-
-
             Row(
               children: [
                 const Icon(Icons.calendar_today, color: Colors.grey),
@@ -64,7 +60,9 @@ class _NewTaskScreenState extends State<NewTaskScreen> {
                   selectedDate == null
                       ? 'Select Due Date'
                       : '${selectedDate!.day}/${selectedDate!.month}/${selectedDate!.year}',
-                  style: TextStyle(fontSize: 16, color: selectedDate == null ? Colors.grey : Colors.black),
+                  style: TextStyle(
+                      fontSize: 16,
+                      color: selectedDate == null ? Colors.grey : Colors.black),
                 ),
                 const Spacer(),
                 TextButton(
@@ -86,12 +84,11 @@ class _NewTaskScreenState extends State<NewTaskScreen> {
               ],
             ),
             const SizedBox(height: 16),
-
-            
             DropdownButtonFormField<String>(
               decoration: InputDecoration(
                 labelText: 'Priority',
-                border: OutlineInputBorder(borderRadius: BorderRadius.circular(8.0)),
+                border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(8.0)),
               ),
               items: ['Low', 'Medium', 'High'].map((priority) {
                 return DropdownMenuItem(
@@ -106,8 +103,6 @@ class _NewTaskScreenState extends State<NewTaskScreen> {
               },
             ),
             const SizedBox(height: 24),
-
-          
             SizedBox(
               width: double.infinity,
               child: ElevatedButton(
